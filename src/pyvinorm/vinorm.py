@@ -81,11 +81,11 @@ class ViNormalizer:
         result = ""
         for token in normalized_text.split():
             token_lower = token.lower()
-            if acronym_mapping.contains(token_lower):
-                result += " " + acronym_mapping.get_with_context(token_lower, result, token_lower)
-            elif teencode_mapping.contains(token_lower):
-                result += " " + teencode_mapping.get_with_context(token_lower, result, token_lower)
-            elif symbol_mapping.contains(token):
+            # if acronym_mapping.contains(token_lower):
+            #     result += " " + acronym_mapping.get_with_context(token_lower, result, token_lower)
+            # elif teencode_mapping.contains(token_lower):
+            #     result += " " + teencode_mapping.get_with_context(token_lower, result, token_lower)
+            if symbol_mapping.contains(token):
                 result += " " + symbol_mapping.get(token)
             elif len(token) == 1 and token.isalpha():
                 result += " " + lettersound_mapping.get(token_lower, token)
