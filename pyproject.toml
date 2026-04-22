@@ -1,0 +1,28 @@
+[project]
+name = "pyvinorm"
+version = "0.2.0"
+description = "A package for normalizing texts into their spoken form."
+readme = "README.md"
+authors = [
+    { name = "hoang1007", email = "hoangvuhuy1007@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "flashtext>=2.7",
+    "kenlm>=0.3.0",
+    "regex>=2024.11.6",
+    "requests>=2.32.4",
+]
+
+[project.scripts]
+pyvinorm = "pyvinorm.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.0",
+    "pytest-cov>=6.2.1",
+]
